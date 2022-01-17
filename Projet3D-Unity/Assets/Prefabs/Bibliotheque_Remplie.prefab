@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 8038132647513800330}
   - component: {fileID: 6350907372688945455}
   - component: {fileID: 9207050691713451493}
+  - component: {fileID: 476286440591634212}
+  - component: {fileID: 7337971396160735993}
   m_Layer: 0
   m_Name: Bibliotheque_Remplie
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +133,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 06e99cf773032064a9bc0ca1f3108252, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -153,6 +155,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &476286440591634212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261772522615989296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69754a57dd27f0468e06f91b44ab9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7337971396160735993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261772522615989296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35623968, y: 1.1640733, z: 2.0966768}
+  m_Center: {x: 0.00000008195639, y: 0, z: 1.0483384}
 --- !u!1001 &57221824519517303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +246,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -294,6 +325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &8580395318029230753 stripped
@@ -367,6 +402,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -442,6 +481,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &9065503683091067555 stripped
@@ -515,6 +558,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -590,6 +637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &8680096683497411284 stripped
@@ -663,6 +714,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -738,6 +793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &7348959509588933115 stripped
@@ -811,6 +870,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -886,6 +949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &7991135586012121942 stripped
@@ -959,6 +1026,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1034,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &6244287460083846692 stripped
@@ -1107,6 +1182,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1182,6 +1261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &6858602260324927724 stripped
@@ -1255,6 +1338,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1330,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &6367753912469400391 stripped
@@ -1403,6 +1494,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (71)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1478,6 +1573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &4935546403893734726 stripped
@@ -1551,6 +1650,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1626,6 +1729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &5035036058585926090 stripped
@@ -1699,6 +1806,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1774,6 +1885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &5726713664567163746 stripped
@@ -1847,6 +1962,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -1922,6 +2041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &5591174292578238337 stripped
@@ -1995,6 +2118,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2070,6 +2197,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &5373722819803021318 stripped
@@ -2143,6 +2274,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2218,6 +2353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &5246496681334671965 stripped
@@ -2291,6 +2430,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2366,6 +2509,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &3754091369367355989 stripped
@@ -2439,6 +2586,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2514,6 +2665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &3587802464490682915 stripped
@@ -2587,6 +2742,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2662,6 +2821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &4513391464871045522 stripped
@@ -2735,6 +2898,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2810,6 +2977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &4347034759523289809 stripped
@@ -2883,6 +3054,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -2958,6 +3133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &4277350366139526486 stripped
@@ -3031,6 +3210,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3106,6 +3289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &2764201172789841699 stripped
@@ -3179,6 +3366,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3254,6 +3445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &2670273097556772376 stripped
@@ -3327,6 +3522,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3402,6 +3601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &2333928601677454478 stripped
@@ -3475,6 +3678,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3550,6 +3757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &3363632810177506443 stripped
@@ -3623,6 +3834,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3698,6 +3913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &3103364329328390392 stripped
@@ -3771,6 +3990,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3846,6 +4069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &3139548353695063739 stripped
@@ -3919,6 +4146,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -3994,6 +4225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &1650942832443002151 stripped
@@ -4067,6 +4302,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -4142,6 +4381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &1578508951529348780 stripped
@@ -4215,6 +4458,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -4290,6 +4537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &2244367627970599169 stripped
@@ -4363,6 +4614,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -4438,6 +4693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &1930279433841745021 stripped
@@ -4511,6 +4770,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -4586,6 +4849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &1803595713781476528 stripped
@@ -4659,6 +4926,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -4734,6 +5005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &156807859581376448 stripped
@@ -4807,6 +5082,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -4882,6 +5161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &183002501747943893 stripped
@@ -4955,6 +5238,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -5030,6 +5317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &1033635976879238946 stripped
@@ -5103,6 +5394,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -5178,6 +5473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &828304719325964992 stripped
@@ -5251,6 +5550,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
@@ -5326,6 +5629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &582375105096141323 stripped
@@ -5400,6 +5707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Livre (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
 --- !u!4 &684382548822800175 stripped
@@ -5473,6 +5784,10 @@ PrefabInstance:
     - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
       propertyPath: m_Name
       value: Livre (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013104921848291570, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12fde9bdfc9626742872d08e83869296, type: 3}
