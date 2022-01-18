@@ -14,13 +14,22 @@ public class SpawnManager : MonoBehaviour
     private List<Vector3> playersFirstPosition = new List<Vector3>();
     private List<Quaternion> playersFirstRotation = new List<Quaternion>();
     public bool hasKeyPresent = false;
+    private List<Vector3> keyPositions = new List<Vector3>();
     // Start is called before the first frame update
     void Start()
     {
+        InstantiatePositionKey();
         InstantiateFirstRotationPlayers();
         InstatiateFirstPositionPlayers();
         InstantiateKey();
         InstantiatePlayer();
+    }
+
+    private void InstantiatePositionKey()
+    {
+        keyPositions.Add(new Vector3(21, 1, 26));
+        keyPositions.Add(new Vector3(-12, 3, -25));
+        keyPositions.Add(new Vector3(-7, 1, -5));
     }
 
     private void InstantiateFirstRotationPlayers()
@@ -31,8 +40,8 @@ public class SpawnManager : MonoBehaviour
 
     private void InstatiateFirstPositionPlayers()
     {
-        playersFirstPosition.Add(new Vector3(13, 0.8f, 4f));
-        playersFirstPosition.Add(new Vector3(13, 0.8f, 6f));
+        playersFirstPosition.Add(new Vector3(-6, 0.8f, 14f));
+        playersFirstPosition.Add(new Vector3(29, 0.8f, 8f));
     }
 
     // Update is called once per frame
@@ -46,7 +55,8 @@ public class SpawnManager : MonoBehaviour
 
     void InstantiateKey()
     {
-        key = Instantiate(keyPrefab, keyPrefab.transform.position, keyPrefab.transform.rotation);
+        int rand = Random.Range(0, 3);
+        key = Instantiate(keyPrefab, keyPositions[rand], keyPrefab.transform.rotation);
         key.name = "Key";
         hasKeyPresent = true;
 
@@ -76,8 +86,9 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator RespawnKey()
     {
+        int rand = Random.Range(0, 3);
         hasKeyPresent = true;
         yield return new WaitForSeconds(4f);
-        key = Instantiate(keyPrefab, keyPrefab.transform.position, keyPrefab.transform.rotation);
+        key = Instantiate(keyPrefab, keyPositions[rand], keyPrefab.transform.rotation);
     }
 }

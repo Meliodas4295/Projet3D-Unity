@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PortalManager : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player0;
+    private GameObject player1;
     [SerializeField]
-    private GameObject portal;
+    private GameObject portal0;
+    [SerializeField]
+    private GameObject portal1;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +19,24 @@ public class PortalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null)
-        {
-            if (player.GetComponent<PlayerManager>().GetHasKey())
+        if (player0 != null && player1 != null)
+        {       
+            if (player0.GetComponent<PlayerManager>().GetHasKey())
             {
-                portal.SetActive(true);
+                portal0.SetActive(true);  
             }
             else
             {
-                portal.SetActive(false);
+                portal0.SetActive(false);
+            }
+            if (player1.GetComponent<PlayerManager>().GetHasKey())
+            {
+                portal1.SetActive(true);
+
+            }
+            else
+            {
+                portal1.SetActive(false);
             }
         }
     }
@@ -32,13 +44,7 @@ public class PortalManager : MonoBehaviour
     IEnumerator WaitPlayerInstatiation()
     {
         yield return new WaitUntil(() => GameObject.Find("Player0") != null);
-        if (gameObject.name == "PortalPlayer0")
-        {
-            player = GameObject.Find("Player0");
-        }
-        if (gameObject.name == "PortalPlayer1")
-        {
-            player = GameObject.Find("Player1");
-        }
+        player0 = GameObject.Find("Player0");
+        player1 = GameObject.Find("Player1");
     }
 }

@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 142222822612037330}
   m_Layer: 0
   m_Name: Porte_droite
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6090848198402689518}
   m_Layer: 0
   m_Name: Porte_gauche
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mur_porte_FBX
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36730382445e99140bd2bc7e9fadc8c9, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36730382445e99140bd2bc7e9fadc8c9, type: 3}
 --- !u!4 &249298172097125346 stripped
@@ -441,6 +445,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 36730382445e99140bd2bc7e9fadc8c9, type: 3}
       propertyPath: m_Name
       value: Mur_porte_FBX (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36730382445e99140bd2bc7e9fadc8c9, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36730382445e99140bd2bc7e9fadc8c9, type: 3}
@@ -512,6 +520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portail_encadrement_FBX
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 940de7bc3ab44024c9f7ce4e06f6a969, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 940de7bc3ab44024c9f7ce4e06f6a969, type: 3}
 --- !u!4 &249298170775227899 stripped
@@ -581,6 +593,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 940de7bc3ab44024c9f7ce4e06f6a969, type: 3}
       propertyPath: m_Name
       value: Portail_encadrement_FBX (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 940de7bc3ab44024c9f7ce4e06f6a969, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 940de7bc3ab44024c9f7ce4e06f6a969, type: 3}

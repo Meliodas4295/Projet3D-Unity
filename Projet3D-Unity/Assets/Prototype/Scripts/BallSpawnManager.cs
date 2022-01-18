@@ -28,17 +28,20 @@ public class BallSpawnManager : MonoBehaviour
 
     private void BallInstantiation()
     {
-        timerBeforeNewBall += Time.deltaTime;
-        if (timerBeforeNewBall > 1f)
+        if (!GetComponentInParent<PlayerManager>().GetIsWinner() && !GetComponentInParent<PlayerManager>().GetIsGameOver())
         {
-            //lightingBall.color = new Color(lightingBall.color.r, lightingBall.color.g, lightingBall.color.b, 1f);
-            if (Input.GetKeyDown(InputTouch()))
+            timerBeforeNewBall += Time.deltaTime;
+            if (timerBeforeNewBall > 1f)
             {
-                //lightingBall.color = new Color(lightingBall.color.r, lightingBall.color.g, lightingBall.color.b, 0.25f);
-                GameObject ballInstantiate = Instantiate(ball, transform.position, player.transform.rotation);
-                ballRb = ballInstantiate.GetComponent<Rigidbody>();
-                ballRb.AddForce(transform.forward * 10f, ForceMode.Impulse);
-                timerBeforeNewBall = 0;
+                lightingBall.color = new Color(lightingBall.color.r, lightingBall.color.g, lightingBall.color.b, 1f);
+                if (Input.GetKeyDown(InputTouch()))
+                {
+                    lightingBall.color = new Color(lightingBall.color.r, lightingBall.color.g, lightingBall.color.b, 0.25f);
+                    GameObject ballInstantiate = Instantiate(ball, transform.position, player.transform.rotation);
+                    ballRb = ballInstantiate.GetComponent<Rigidbody>();
+                    ballRb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+                    timerBeforeNewBall = 0;
+                }
             }
         }
     }
@@ -47,11 +50,11 @@ public class BallSpawnManager : MonoBehaviour
     {
         if(GetComponentInParent<PlayerManager>().GetId() == 0)
         {
-            return KeyCode.L;
+            return KeyCode.Keypad2;
         }
         else
         {
-            return KeyCode.V;
+            return KeyCode.E;
         }
     }
 }

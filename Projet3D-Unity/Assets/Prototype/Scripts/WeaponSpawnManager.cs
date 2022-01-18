@@ -29,18 +29,21 @@ public class WeaponSpawnManager : MonoBehaviour
 
     private void WeaponInstantiation()
     {
-        timerBeforeNewWeapon += Time.deltaTime;
-        if (timerBeforeNewWeapon > 1f)
+        if (!GetComponentInParent<PlayerManager>().GetIsWinner() && !GetComponentInParent<PlayerManager>().GetIsGameOver())
         {
-            //spell.color = new Color(spell.color.r, spell.color.g, spell.color.b, 1f);
-            if (Input.GetKeyDown(InputTouch()))
+            timerBeforeNewWeapon += Time.deltaTime;
+            if (timerBeforeNewWeapon > 1f)
             {
-                //spell.color = new Color(spell.color.r, spell.color.g, spell.color.b, 0.25f);
-                GameObject weaponInstantiate = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(90, player.transform.rotation.eulerAngles.y, 0));
-                weaponInstantiate.GetComponent<WeaponManager>().idPlayer = player.GetComponent<PlayerManager>().GetId();
-                weaponRigidBody = weaponInstantiate.GetComponent<Rigidbody>();
-                weaponRigidBody.AddForce(transform.forward * 1000f);
-                timerBeforeNewWeapon = 0;
+                spell.color = new Color(spell.color.r, spell.color.g, spell.color.b, 1f);
+                if (Input.GetKeyDown(InputTouch()))
+                {
+                    spell.color = new Color(spell.color.r, spell.color.g, spell.color.b, 0.25f);
+                    GameObject weaponInstantiate = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(90, player.transform.rotation.eulerAngles.y, 0));
+                    weaponInstantiate.GetComponent<WeaponManager>().idPlayer = player.GetComponent<PlayerManager>().GetId();
+                    weaponRigidBody = weaponInstantiate.GetComponent<Rigidbody>();
+                    weaponRigidBody.AddForce(transform.forward * 1000f);
+                    timerBeforeNewWeapon = 0;
+                }
             }
         }
     }
@@ -49,11 +52,11 @@ public class WeaponSpawnManager : MonoBehaviour
     {
         if(GetComponentInParent<PlayerManager>().GetId() == 0)
         {
-            return KeyCode.M;
+            return KeyCode.Keypad3;
         }
         else
         {
-            return KeyCode.B;
+            return KeyCode.A;
         }
     }
 }

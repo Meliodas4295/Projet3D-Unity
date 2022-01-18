@@ -34,6 +34,8 @@ public class PlayerManager : MonoBehaviour
     private Image hide;
     private Image background;
 
+    private float jumpHeight = 1f;
+
     Vector3 velocity;
     bool isGrounded;
 
@@ -42,6 +44,7 @@ public class PlayerManager : MonoBehaviour
     private float timerDissimulation = 0;
     private Vector3 lastPosition = new Vector3(0, 0, 0);
     private bool isMoving = false;
+    [SerializeField]
     private bool hasKey = false;
     [SerializeField]
     private bool isTouching = false;
@@ -50,7 +53,6 @@ public class PlayerManager : MonoBehaviour
     private bool isGameOver = false;
     [SerializeField]
     private bool isWinner = false;
-    // Start is called before the first frame update
     public Image GetLightingBall()
     {
         return lightingBall;
@@ -110,7 +112,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         lightingBold.SetActive(false);
-        /*if(id == 0)
+        if (id == 0)
         {
             pass = GameObject.Find("PassPlayer1").GetComponent<Image>();
             spell = GameObject.Find("SpellPlayer1").GetComponent<Image>();
@@ -125,40 +127,56 @@ public class PlayerManager : MonoBehaviour
             hide = GameObject.Find("HidePlayer2").GetComponent<Image>();
             lightingBall = GameObject.Find("LightBallPlayer2").GetComponent<Image>();
             background = GameObject.Find("BackgroundPlayer2").GetComponent<Image>();
-        }*/
-        //pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f);
+        }
+        pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f);
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        DissimulationPower();
-        MovingDetection();
-        timer += Time.deltaTime;
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
+        if (!isGameOver && !isWinner)
         {
-            velocity.y = -2f;
-        }
-        float x = Input.GetAxis("Horizontal" + id);
-        float z = Input.GetAxis("Vertical" + id);
+            DissimulationPower();
+            MovingDetection();
+            timer += Time.deltaTime;
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        Vector3 move = transform.forward * z;
-        Vector3 rotation = new Vector3(0, 1, 0) * x;
-        if (!isTouching)
-        {
-            controller.Move(move * speed * Time.deltaTime);
-            playerBody.Rotate(rotation * speedRotation);
-        }
-        else
-        {
-            TimeOfMalusEffect();
-        }
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+            float x = Input.GetAxis("Horizontal" + id);
+            float z = Input.GetAxis("Vertical" + id);
 
-        controller.Move(velocity * Time.deltaTime);
-        velocity.y += gravity * Time.deltaTime;
+            Vector3 move = transform.forward * z;
+            Vector3 rotation = new Vector3(0, 1, 0) * x;
+            if (!isTouching)
+            {
+                controller.Move(move * speed * Time.deltaTime);
+                playerBody.Rotate(rotation * speedRotation);
+            }
+            else
+            {
+                TimeOfMalusEffect();
+            }
+            if (id == 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Keypad0) && isGrounded)
+                {
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+                {
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                }
+            }
+            controller.Move(velocity * Time.deltaTime);
+            velocity.y += gravity * Time.deltaTime;
+        }
     }
 
     private void TimeOfMalusEffect()
@@ -169,12 +187,12 @@ public class PlayerManager : MonoBehaviour
             timerMalus = 0;
             isTouching = false;
             lightingBold.SetActive(false);
-            /*pass.color = Color.white;
+            pass.color = Color.white;
             pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f); ;
             hide.color = Color.white;
             lightingBall.color = Color.white;
             background.color = Color.white;
-            spell.color = Color.white;*/
+            spell.color = Color.white;
         }
     }
 
@@ -196,10 +214,10 @@ public class PlayerManager : MonoBehaviour
         timeBeforeNewDissimulation += Time.deltaTime;
         if (timeBeforeNewDissimulation > 5f)
         {
-            //hide.color = new Color(hide.color.r, hide.color.g, hide.color.b, 1f);
+            hide.color = new Color(hide.color.r, hide.color.g, hide.color.b, 1f);
             if (Input.GetKeyDown(InputTouch()))
             {
-                //hide.color = new Color(hide.color.r, hide.color.g, hide.color.b, 0.25f);
+                hide.color = new Color(hide.color.r, hide.color.g, hide.color.b, 0.25f);
                 dissimulationPowerUp = true;
             }
         }
@@ -223,12 +241,12 @@ public class PlayerManager : MonoBehaviour
             weapon = collision.gameObject;
             lightingBold.SetActive(true);
             hasKey = false;
-          /*  pass.color = new Color(pass.color.r, 0, 0, 0.25f);
+            pass.color = new Color(pass.color.r, 0, 0, 0.25f);
             hide.color = Color.red;
             lightingBall.color = Color.red;
             background.color = Color.red;
-            spell.color = Color.red;*/
-            
+            spell.color = Color.red;
+
 
         }
     }
@@ -236,6 +254,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.name == "Portal0" || other.name == "Portal1")
         {
+            Debug.Log(id);
             isWinner = true;
 
         }
@@ -261,7 +280,7 @@ public class PlayerManager : MonoBehaviour
         if (hit.gameObject.CompareTag("Key"))
         {
             hasKey = true;
-            //pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 1f);
+            pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 1f);
             Destroy(hit.gameObject);
             spawnManager.hasKeyPresent = false;
         }
@@ -279,11 +298,11 @@ public class PlayerManager : MonoBehaviour
     {
         if(id == 0)
         {
-            return KeyCode.K;
+            return KeyCode.Keypad1;
         }
         else
         {
-            return KeyCode.C;
+            return KeyCode.R;
         }
     }
 }

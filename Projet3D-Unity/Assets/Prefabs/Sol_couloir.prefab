@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2208117913685853463}
   - component: {fileID: -8489998593655943206}
   - component: {fileID: 5156391946266257757}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sol_couloir
   m_TagString: Ground
   m_Icon: {fileID: 0}
