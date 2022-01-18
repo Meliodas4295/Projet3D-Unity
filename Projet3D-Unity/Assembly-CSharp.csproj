@@ -72,6 +72,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\Prototype\Scripts\DoorManager.cs" />
     <Compile Include="Assets\MadeByProfessorOakie\SimpleSonarShader\Example\CubeManager.cs" />
     <Compile Include="Assets\Test\Scripts\BalleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
@@ -117,7 +118,6 @@
     <Compile Include="Assets\Prototype\shaders-portal-master\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Prototype\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Prototype\Scripts\DoorManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
