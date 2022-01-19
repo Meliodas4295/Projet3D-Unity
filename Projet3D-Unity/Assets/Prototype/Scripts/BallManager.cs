@@ -14,7 +14,6 @@ public class BallManager : MonoBehaviour
     void Update()
     {
         StartCoroutine(DestroyBall());
-
     }
 
     IEnumerator DestroyBall()

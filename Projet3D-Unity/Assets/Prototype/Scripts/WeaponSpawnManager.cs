@@ -14,6 +14,7 @@ public class WeaponSpawnManager : MonoBehaviour
     private float timerBeforeNewWeapon = 1f;
     private Animator animator;
 
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -25,6 +26,7 @@ public class WeaponSpawnManager : MonoBehaviour
     {
         if (!GetComponentInParent<PlayerManager>().GetIsTouching())
         {
+
             WeaponInstantiation();
         }
     }
@@ -38,24 +40,26 @@ public class WeaponSpawnManager : MonoBehaviour
             {
                 spell.color = new Color(spell.color.r, spell.color.g, spell.color.b, 1f);
                 if (Input.GetKeyDown(InputTouch()))
-                {
+                {                   
                     StartCoroutine(Attack());
                     spell.color = new Color(spell.color.r, spell.color.g, spell.color.b, 0.25f);
                     GameObject weaponInstantiate = Instantiate(weaponPrefab, transform.position, Quaternion.Euler(90, player.transform.rotation.eulerAngles.y, 0));
                     weaponInstantiate.GetComponent<WeaponManager>().idPlayer = player.GetComponent<PlayerManager>().GetId();
                     weaponRigidBody = weaponInstantiate.GetComponent<Rigidbody>();
                     weaponRigidBody.AddForce(transform.forward * 1000f);
-                    timerBeforeNewWeapon = 0;
+                    timerBeforeNewWeapon = 0;                    
+
                 }
             }
         }
+
     }
 
     KeyCode InputTouch()
     {
         if(GetComponentInParent<PlayerManager>().GetId() == 0)
         {
-            return KeyCode.Keypad3;
+            return KeyCode.Keypad1;
         }
         else
         {

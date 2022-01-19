@@ -82,8 +82,16 @@ public class PlayerManager : MonoBehaviour
     private bool malusEffectStart = true;
 
     private AudioSource audioSource;
+    private AudioSource keyAudioSource;
+ 
     [SerializeField]
     private AudioClip stunSound;
+    [SerializeField]
+    private AudioClip keyCollectSound;
+
+    private AudioSource dissimulationAudioSource;
+    [SerializeField]
+    private AudioClip dissimulationSound;
 
     public Animator GetAnimator()
     {
@@ -164,6 +172,8 @@ public class PlayerManager : MonoBehaviour
         Debug.Log(malusPlayer0);
         animator = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
+        keyAudioSource = GetComponent<AudioSource>();
+        dissimulationAudioSource = GetComponent<AudioSource>();
         //timerBeforeBeginningOfPlay += 1;
     }
 
@@ -312,6 +322,7 @@ public class PlayerManager : MonoBehaviour
             {
                 hide.color = new Color(hide.color.r, hide.color.g, hide.color.b, 0.25f);
                 dissimulationPowerUp = true;
+                dissimulationAudioSource.PlayOneShot(dissimulationSound, 0.5f);
             }
         }
         if (dissimulationPowerUp && timerDissimulation < 10)
@@ -389,6 +400,7 @@ public class PlayerManager : MonoBehaviour
             pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 1f);
             Destroy(hit.gameObject);
             spawnManager.hasKeyPresent = false;
+            keyAudioSource.PlayOneShot(keyCollectSound, 0.5f);
         }
     }
 
@@ -404,7 +416,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (id == 0)
         {
-            return KeyCode.Keypad1;
+            return KeyCode.Keypad3;
         }
         else
         {
