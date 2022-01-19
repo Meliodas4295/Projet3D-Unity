@@ -10,11 +10,21 @@ public class PlayerManager : MonoBehaviour
     private CharacterController controller;
     [SerializeField]
     private Transform playerBody;
+    private Animator animator;
 
     [SerializeField]
     private GameObject lightingBold;
 
-    private float speed = 12f;
+    private float speed = 10f;
+    private Vector3 moveDirection;
+
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private float walkSpeed;
+    [SerializeField]
+    private float runSpeed;
+
 
     private int id;
     [SerializeField]
@@ -48,6 +58,7 @@ public class PlayerManager : MonoBehaviour
     private bool hasKey = false;
     [SerializeField]
     private bool isTouching = false;
+    private bool isTouchingAnimator = false;
     private bool dissimulationPowerUp = false;
     private float timeBeforeNewDissimulation = 5f;
     private bool isGameOver = false;
@@ -69,6 +80,11 @@ public class PlayerManager : MonoBehaviour
     private Color passColor;
 
     private bool malusEffectStart = true;
+
+    public Animator GetAnimator()
+    {
+        return animator;
+    }
     public bool GetCountDown()
     {
         return countDown;
@@ -142,6 +158,8 @@ public class PlayerManager : MonoBehaviour
         malusPlayer1 = malus.transform.Find("MalusPlayer1").gameObject;
         StartCoroutine(timerForTheBeginning());
         Debug.Log(malusPlayer0);
+        animator = GetComponentInChildren<Animator>();
+
         //timerBeforeBeginningOfPlay += 1;
     }
 
@@ -180,6 +198,9 @@ public class PlayerManager : MonoBehaviour
 
             Vector3 move = transform.forward * z;
             Vector3 rotation = new Vector3(0, 1, 0) * x;
+
+            moveDirection = new Vector3(0, 0, z);
+            moveDirection = transform.TransformDirection(moveDirection);
             if (!isTouching)
             {
                 controller.Move(move * speed * Time.deltaTime);
@@ -187,6 +208,7 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
+                Stun();
                 TimeOfMalusEffect();
             }
             if (id == 0)
@@ -203,8 +225,54 @@ public class PlayerManager : MonoBehaviour
                     velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 }
             }
+            Move();
+            /*if (Input.GetKeyDown(KeyCode.E))
+            {
+                StartCoroutine(Attack());
+            }*/
             controller.Move(velocity * Time.deltaTime);
             velocity.y += gravity * Time.deltaTime;
+        }
+    }
+
+    private void Move()
+    {
+        if (isGrounded)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isStunned", false);
+
+
+            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+            {
+                Walk();
+            }
+            else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            {
+                Run();
+            }
+            else if (moveDirection == Vector3.zero)
+            {
+                Idle();
+            }
+
+            moveDirection *= moveSpeed;
+
+            /*if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }*/
+
+            if (isTouchingAnimator)
+            {
+                Stun();
+                isTouchingAnimator = false;
+            }
+
+        }
+        else
+        {
+            animator.SetBool("isJumping", true);
         }
     }
 
@@ -260,10 +328,12 @@ public class PlayerManager : MonoBehaviour
         {
             if (id == 0)
             {
+                isTouchingAnimator = true;
                 malusPlayer0.SetActive(true);
             }
             else
             {
+                isTouchingAnimator = true;
                 malusPlayer1.SetActive(true);
             }
             isTouching = true;
@@ -394,20 +464,44 @@ public class PlayerManager : MonoBehaviour
         background.color = Color.white;
         spell.color = Color.white;
     }
+
+    private void Idle()
+    {
+        animator.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+    }
+
+    private void Walk()
+    {
+        moveSpeed = walkSpeed;
+        animator.SetFloat("Speed", 0.5f, 0.1f, Time.deltaTime);
+    }
+
+    private void Run()
+    {
+        moveSpeed = runSpeed;
+        animator.SetFloat("Speed", 1, 0.1f, Time.deltaTime);
+    }
+
+    private void Jump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+
+    }
+
+    private IEnumerator Attack()
+    {
+        animator.SetLayerWeight(animator.GetLayerIndex("AttackLayer"), 1);
+        animator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(2);
+
+        animator.SetLayerWeight(animator.GetLayerIndex("AttackLayer"), 0);
+    }
+
+    private void Stun()
+    {
+        moveSpeed = 0;
+        animator.SetBool("isStunned", true);
+    }
 }
 
-
-
-//timerMalus += Time.deltaTime;
-//if (timerMalus > 10f)
-//{
-//    timerMalus = 0;
-//    isTouching = false;
-//    lightingBold.SetActive(false);
-//    pass.color = Color.white;
-//    pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f); ;
-//    hide.color = Color.white;
-//    lightingBall.color = Color.white;
-//    background.color = Color.white;
-//    spell.color = Color.white;
-//}

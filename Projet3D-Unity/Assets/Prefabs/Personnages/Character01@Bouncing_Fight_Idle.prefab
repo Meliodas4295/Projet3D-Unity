@@ -1200,8 +1200,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3176551888624416923}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 63b206eaeb2ecf247925827a562baef5, type: 2}
+  m_Avatar: {fileID: 9000000, guid: b64fbaaebd1ce5140a2cd08c178c1591, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7b7be7fa46b151347b5af0d77c5f21c7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1225,6 +1225,9 @@ MonoBehaviour:
   controller: {fileID: 2365525382332827803}
   playerBody: {fileID: 2836900186083402273}
   lightingBold: {fileID: 178460, guid: a84cb58ef7faa67488076810242453b9, type: 3}
+  moveSpeed: 0
+  walkSpeed: 3
+  runSpeed: 6
   groundCheck: {fileID: 2365525381932923190}
   groundMask:
     serializedVersion: 2

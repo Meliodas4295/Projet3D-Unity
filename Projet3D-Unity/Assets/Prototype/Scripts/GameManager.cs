@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
         camera.SetActive(false);
         timerBeginning.SetActive(true);
         //RenderSettings.skybox = null;
-        directionalLight.SetActive(false);
+        //directionalLight.SetActive(false);
     }
 
     public void QuitButton()

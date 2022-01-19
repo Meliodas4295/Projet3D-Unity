@@ -28,7 +28,7 @@ public class BallSpawnManager : MonoBehaviour
 
     private void BallInstantiation()
     {
-        if (!GetComponentInParent<PlayerManager>().GetIsWinner() && !GetComponentInParent<PlayerManager>().GetIsGameOver())
+        if (!GetComponentInParent<PlayerManager>().GetIsWinner() && !GetComponentInParent<PlayerManager>().GetIsGameOver() && GetComponentInParent<PlayerManager>().GetCountDown())
         {
             timerBeforeNewBall += Time.deltaTime;
             if (timerBeforeNewBall > 3f)
