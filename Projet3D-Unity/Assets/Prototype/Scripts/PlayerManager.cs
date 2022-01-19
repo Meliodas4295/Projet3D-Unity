@@ -81,6 +81,10 @@ public class PlayerManager : MonoBehaviour
 
     private bool malusEffectStart = true;
 
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip stunSound;
+
     public Animator GetAnimator()
     {
         return animator;
@@ -159,7 +163,7 @@ public class PlayerManager : MonoBehaviour
         StartCoroutine(timerForTheBeginning());
         Debug.Log(malusPlayer0);
         animator = GetComponentInChildren<Animator>();
-
+        audioSource = GetComponent<AudioSource>();
         //timerBeforeBeginningOfPlay += 1;
     }
 
@@ -326,6 +330,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
+            audioSource.PlayOneShot(stunSound, 0.5f);
             if (id == 0)
             {
                 isTouchingAnimator = true;
