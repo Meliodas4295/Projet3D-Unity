@@ -16,6 +16,11 @@ public class SpawnManager : MonoBehaviour
     public bool hasKeyPresent = false;
     private List<Vector3> keyPositions = new List<Vector3>();
     // Start is called before the first frame update
+
+    public List<Vector3> GetPlayersFirstPosition()
+    {
+        return playersFirstPosition;
+    }
     void Start()
     {
         InstantiatePositionKey();
@@ -40,8 +45,8 @@ public class SpawnManager : MonoBehaviour
 
     private void InstatiateFirstPositionPlayers()
     {
-        playersFirstPosition.Add(new Vector3(-6, 0.8f, 14f));
-        playersFirstPosition.Add(new Vector3(29, 0.8f, 8f));
+        playersFirstPosition.Add(new Vector3(-6, 0f, 14f));
+        playersFirstPosition.Add(new Vector3(29, 0f, 8f));
     }
 
     // Update is called once per frame
@@ -76,11 +81,11 @@ public class SpawnManager : MonoBehaviour
     {
         if (playerManager.GetId() == 0)
         {
-            player.GetComponentInChildren<Camera>().rect = new Rect(0, 0, 0.5f, 1);
+            player.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0, 0.5f, 1);
         }
         else
         {
-            player.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0, 0.5f, 1);
+            player.GetComponentInChildren<Camera>().rect = new Rect(0, 0, 0.5f, 1);
         }
     }
 

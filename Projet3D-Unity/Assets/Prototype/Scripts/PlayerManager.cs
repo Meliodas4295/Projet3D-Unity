@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +9,12 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private CharacterController controller;
     [SerializeField]
-    private  Transform playerBody;
+    private Transform playerBody;
 
     [SerializeField]
     private GameObject lightingBold;
 
-    private float speed =  12f;
+    private float speed = 12f;
 
     private int id;
     [SerializeField]
@@ -40,7 +41,6 @@ public class PlayerManager : MonoBehaviour
     bool isGrounded;
 
     private float timer = 0;
-    private float timerMalus = 0;
     private float timerDissimulation = 0;
     private Vector3 lastPosition = new Vector3(0, 0, 0);
     private bool isMoving = false;
@@ -53,6 +53,26 @@ public class PlayerManager : MonoBehaviour
     private bool isGameOver = false;
     [SerializeField]
     private bool isWinner = false;
+
+    private GameObject timerBeginning;
+    private bool countDown = false;
+    private float timerBeforeBeginningOfPlay = 3f;
+    private TextMeshProUGUI countPlayer0;
+    private TextMeshProUGUI countPlayer1;
+
+    private float timerMalus = 10f;
+    private bool countDownMalus = false;
+    private GameObject malus;
+    private GameObject malusPlayer0;
+    private GameObject malusPlayer1;
+
+    private Color passColor;
+
+    private bool malusEffectStart = true;
+    public bool GetCountDown()
+    {
+        return countDown;
+    }
     public Image GetLightingBall()
     {
         return lightingBall;
@@ -112,30 +132,39 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         lightingBold.SetActive(false);
-        if (id == 0)
-        {
-            pass = GameObject.Find("PassPlayer1").GetComponent<Image>();
-            spell = GameObject.Find("SpellPlayer1").GetComponent<Image>();
-            hide = GameObject.Find("HidePlayer1").GetComponent<Image>();
-            lightingBall = GameObject.Find("LightBallPlayer1").GetComponent<Image>();
-            background = GameObject.Find("BackgroundPlayer1").GetComponent<Image>();
-        }
-        else
-        {
-            pass = GameObject.Find("PassPlayer2").GetComponent<Image>();
-            spell = GameObject.Find("SpellPlayer2").GetComponent<Image>();
-            hide = GameObject.Find("HidePlayer2").GetComponent<Image>();
-            lightingBall = GameObject.Find("LightBallPlayer2").GetComponent<Image>();
-            background = GameObject.Find("BackgroundPlayer2").GetComponent<Image>();
-        }
+        InstantiateUIPlayer();
         pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f);
+        passColor = new Color(pass.color.r, pass.color.g, pass.color.b);
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        InstatiateTimerBeginning();
+        malus = GameObject.Find("TimerMalus");
+        malusPlayer0 = malus.transform.Find("MalusPlayer0").gameObject;
+        malusPlayer1 = malus.transform.Find("MalusPlayer1").gameObject;
+        StartCoroutine(timerForTheBeginning());
+        Debug.Log(malusPlayer0);
+        //timerBeforeBeginningOfPlay += 1;
+    }
+
+    private void InstatiateTimerBeginning()
+    {
+        timerBeginning = GameObject.Find("TimerBeginning");
+        countPlayer0 = GameObject.Find("CountPlayer0").GetComponent<TextMeshProUGUI>();
+        countPlayer1 = GameObject.Find("CountPlayer1").GetComponent<TextMeshProUGUI>();
+    }
+
+    private void InstantiateUIPlayer()
+    {
+        pass = GameObject.Find("PassPlayer" + id).GetComponent<Image>();
+        spell = GameObject.Find("SpellPlayer" + id).GetComponent<Image>();
+        hide = GameObject.Find("HidePlayer" + id).GetComponent<Image>();
+        lightingBall = GameObject.Find("LightBallPlayer" + id).GetComponent<Image>();
+        background = GameObject.Find("BackgroundPlayer" + id).GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isGameOver && !isWinner)
+        if (!isGameOver && !isWinner && countDown)
         {
             DissimulationPower();
             MovingDetection();
@@ -181,18 +210,10 @@ public class PlayerManager : MonoBehaviour
 
     private void TimeOfMalusEffect()
     {
-        timerMalus += Time.deltaTime;
-        if (timerMalus > 10f)
+        if (malusEffectStart)
         {
-            timerMalus = 0;
-            isTouching = false;
-            lightingBold.SetActive(false);
-            pass.color = Color.white;
-            pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f); ;
-            hide.color = Color.white;
-            lightingBall.color = Color.white;
-            background.color = Color.white;
-            spell.color = Color.white;
+            StartCoroutine(timerMalusCo());
+            malusEffectStart = false;
         }
     }
 
@@ -237,6 +258,14 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
+            if (id == 0)
+            {
+                malusPlayer0.SetActive(true);
+            }
+            else
+            {
+                malusPlayer1.SetActive(true);
+            }
             isTouching = true;
             weapon = collision.gameObject;
             lightingBold.SetActive(true);
@@ -254,8 +283,10 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.name == "Portal0" || other.name == "Portal1")
         {
-            Debug.Log(id);
-            isWinner = true;
+            if (hasKey)
+            {
+                isWinner = true;
+            }
 
         }
     }
@@ -296,7 +327,7 @@ public class PlayerManager : MonoBehaviour
 
     public KeyCode InputTouch()
     {
-        if(id == 0)
+        if (id == 0)
         {
             return KeyCode.Keypad1;
         }
@@ -305,4 +336,78 @@ public class PlayerManager : MonoBehaviour
             return KeyCode.R;
         }
     }
+
+    IEnumerator timerForTheBeginning()
+    {
+        while (timerBeforeBeginningOfPlay > 0)
+        {
+            timerBeforeBeginningOfPlay--;
+            yield return new WaitForSeconds(1f);
+            if (id == 0)
+            {
+                countPlayer0.text = timerBeforeBeginningOfPlay.ToString();
+
+            }
+            else
+            {
+                countPlayer1.text = timerBeforeBeginningOfPlay.ToString();
+            }
+        }
+        countDown = true;
+        timerBeginning.SetActive(false);
+    }
+    IEnumerator timerMalusCo()
+    {
+        while (timerMalus > 0)
+        {
+            timerMalus--;
+            yield return new WaitForSeconds(1f);
+            if (malusPlayer0.activeSelf)
+            {
+                malusPlayer0.GetComponent<TextMeshProUGUI>().text = timerMalus.ToString();
+            }
+            else
+            {
+                malusPlayer1.GetComponent<TextMeshProUGUI>().text = timerMalus.ToString();
+            }
+
+        }
+        timerMalus = 10f;
+        isTouching = false;
+        //lightingBold.SetActive(false);
+        if (id == 0)
+        {
+            malusPlayer0.SetActive(false);
+            malusPlayer0.GetComponent<TextMeshProUGUI>().text = "10";
+
+        }
+        else
+        {
+            malusPlayer1.SetActive(false);
+            malusPlayer1.GetComponent<TextMeshProUGUI>().text = "10";
+        }
+        malusEffectStart = true;
+        pass.color = passColor;
+        pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f); ;
+        hide.color = Color.white;
+        lightingBall.color = Color.white;
+        background.color = Color.white;
+        spell.color = Color.white;
+    }
 }
+
+
+
+//timerMalus += Time.deltaTime;
+//if (timerMalus > 10f)
+//{
+//    timerMalus = 0;
+//    isTouching = false;
+//    lightingBold.SetActive(false);
+//    pass.color = Color.white;
+//    pass.color = new Color(pass.color.r, pass.color.g, pass.color.b, 0.25f); ;
+//    hide.color = Color.white;
+//    lightingBall.color = Color.white;
+//    background.color = Color.white;
+//    spell.color = Color.white;
+//}

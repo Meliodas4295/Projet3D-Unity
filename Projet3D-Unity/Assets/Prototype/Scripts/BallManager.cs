@@ -19,7 +19,7 @@ public class BallManager : MonoBehaviour
 
     IEnumerator DestroyBall()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 }

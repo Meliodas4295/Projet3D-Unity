@@ -10,7 +10,7 @@ public class BallSpawnManager : MonoBehaviour
     private Rigidbody ballRb;
     [SerializeField]
     private GameObject player;
-    private float timerBeforeNewBall = 1f;
+    private float timerBeforeNewBall = 3f;
     private Image lightingBall;
 
     private void Start()
@@ -31,7 +31,7 @@ public class BallSpawnManager : MonoBehaviour
         if (!GetComponentInParent<PlayerManager>().GetIsWinner() && !GetComponentInParent<PlayerManager>().GetIsGameOver())
         {
             timerBeforeNewBall += Time.deltaTime;
-            if (timerBeforeNewBall > 1f)
+            if (timerBeforeNewBall > 3f)
             {
                 lightingBall.color = new Color(lightingBall.color.r, lightingBall.color.g, lightingBall.color.b, 1f);
                 if (Input.GetKeyDown(InputTouch()))
