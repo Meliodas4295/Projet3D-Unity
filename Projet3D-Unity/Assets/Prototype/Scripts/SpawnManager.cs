@@ -32,9 +32,9 @@ public class SpawnManager : MonoBehaviour
 
     private void InstantiatePositionKey()
     {
-        keyPositions.Add(new Vector3(21, 1, 26));
+        keyPositions.Add(new Vector3(24, 1, 26));
         keyPositions.Add(new Vector3(-12, 3, -25));
-        keyPositions.Add(new Vector3(-7, 1, -5));
+        keyPositions.Add(new Vector3(-8, 1, -6));
     }
 
     private void InstantiateFirstRotationPlayers()

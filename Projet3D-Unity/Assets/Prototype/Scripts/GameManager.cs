@@ -72,8 +72,11 @@ public class GameManager : MonoBehaviour
                 uIPlayer.SetActive(false);
                 uiEndGame.SetActive(true);
                 player1.GetComponent<PlayerManager>().SetIsGameOver(true);
+
                 if (respawn)
                 {
+                    player0.GetComponent<PlayerManager>().GetAnimator().SetBool("isWinning", true);
+                    player1.GetComponent<PlayerManager>().GetAnimator().SetBool("isLosing", true);
                     RotationAroundPlayer(player0);
                     RotationAroundPlayer(player1);
                     respawn = false;
@@ -92,6 +95,8 @@ public class GameManager : MonoBehaviour
                 player0.GetComponent<PlayerManager>().SetIsGameOver(true);
                 if (respawn)
                 {
+                    player1.GetComponent<PlayerManager>().GetAnimator().SetBool("isWinning", true);
+                    player0.GetComponent<PlayerManager>().GetAnimator().SetBool("isLosing", true);
                     RotationAroundPlayer(player0);
                     RotationAroundPlayer(player1);
                     respawn = false;
@@ -164,6 +169,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => GameObject.Find("Player0") && GameObject.Find("Player1"));
         player0 = GameObject.Find("Player0");
         player1 = GameObject.Find("Player1");
+        Debug.Log(player0.GetComponent<PlayerManager>().GetAnimator());
+
     }
 
     //IEnumerator timer()

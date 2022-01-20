@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private GameObject lightingBold;
 
-    private float speed = 10f;
+    private float speed = 8f;
     private Vector3 moveDirection;
 
     [SerializeField]
@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
     private Transform groundCheck;
     private float groundDistance = 0.4f;
 
-    private float speedRotation = 1f;
+    private float speedRotation = 0.7f;
     private float gravity = -9.81f;
     [SerializeField]
     private LayerMask groundMask;
@@ -170,7 +170,7 @@ public class PlayerManager : MonoBehaviour
         malusPlayer1 = malus.transform.Find("MalusPlayer1").gameObject;
         StartCoroutine(timerForTheBeginning());
         Debug.Log(malusPlayer0);
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         keyAudioSource = GetComponent<AudioSource>();
         dissimulationAudioSource = GetComponent<AudioSource>();
