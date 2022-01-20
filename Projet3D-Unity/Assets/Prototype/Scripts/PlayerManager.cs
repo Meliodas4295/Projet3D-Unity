@@ -341,26 +341,29 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Weapon"))
         {
-            audioSource.PlayOneShot(stunSound, 0.5f);
-            if (id == 0)
+            if (collision.gameObject.GetComponent<WeaponManager>().idPlayer != id)
             {
-                isTouchingAnimator = true;
-                malusPlayer0.SetActive(true);
+                audioSource.PlayOneShot(stunSound, 0.5f);
+                if (id == 0)
+                {
+                    isTouchingAnimator = true;
+                    malusPlayer0.SetActive(true);
+                }
+                else
+                {
+                    isTouchingAnimator = true;
+                    malusPlayer1.SetActive(true);
+                }
+                isTouching = true;
+                weapon = collision.gameObject;
+                lightingBold.SetActive(true);
+                hasKey = false;
+                pass.color = new Color(pass.color.r, 0, 0, 0.25f);
+                hide.color = Color.red;
+                lightingBall.color = Color.red;
+                background.color = Color.red;
+                spell.color = Color.red;
             }
-            else
-            {
-                isTouchingAnimator = true;
-                malusPlayer1.SetActive(true);
-            }
-            isTouching = true;
-            weapon = collision.gameObject;
-            lightingBold.SetActive(true);
-            hasKey = false;
-            pass.color = new Color(pass.color.r, 0, 0, 0.25f);
-            hide.color = Color.red;
-            lightingBall.color = Color.red;
-            background.color = Color.red;
-            spell.color = Color.red;
 
 
         }

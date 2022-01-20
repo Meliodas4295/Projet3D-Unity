@@ -14,6 +14,10 @@ public class WeaponSpawnManager : MonoBehaviour
     private float timerBeforeNewWeapon = 1f;
     private Animator animator;
 
+    public GameObject GetPlayer()
+    {
+        return player;
+    }
 
     // Start is called before the first frame update
     private void Start()
